@@ -1,0 +1,57 @@
+@import "../../../assets/styles/variables";
+
+#header {
+  overflow: auto;
+  margin: 20px 0;
+
+  .logo,
+  .title {
+    display: inline-block;
+  }
+
+  .logo {
+    a {
+      img {
+        width: 300px;
+      }
+    }
+  }
+
+  .title {
+    float: right;
+
+    img {
+      width: 300px;
+    }
+  }
+
+  @media (max-width: $phoneLarge) {
+    .logo {
+      a {
+        img {
+          width: 250px;
+        }
+      }
+    }
+    .title {
+      img {
+        width: 250px;
+      }
+    }
+  }
+
+  @media (max-width: $phone) {
+    .logo {
+      a {
+        img {
+          width: 150px;
+        }
+      }
+    }
+    .title {
+      img {
+        width: 150px;
+      }
+    }
+  }
+}

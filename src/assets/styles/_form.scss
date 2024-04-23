@@ -1,0 +1,68 @@
+.form-group {
+  width: 100%;
+  margin: 20px 0;
+
+  .label {
+    color: $black;
+    font-size: $font-size-md;
+    line-height: $font-line-height-lg;
+  }
+
+  .form-control {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: $font-size-md;
+    line-height: $font-line-height-lg;
+    padding: 10px;
+    border: 1px solid $base-color;
+    border-radius: 5px;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  line-height: $font-line-height-xl;
+  border-radius: 20px;
+  padding: 0 30px;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-lg;
+  border: none;
+  text-align: center;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &.primary {
+    background-color: $black;
+    color: $white;
+  }
+  @media (max-width: $phoneLarge) {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.ng-select {
+  margin-top: 20px;
+  width: 200px;
+
+  @media (max-width: $phoneLarge) {
+    width: 100%;
+  }
+}
+
+.alert {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  line-height: $font-line-height-lg;
+  padding: 10px 0;
+}
+
+.alert-danger {
+  color: $red;
+}
+
+.form-error {
+  height: 30px;
+}

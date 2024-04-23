@@ -1,0 +1,120 @@
+@import '../../../assets/styles/variables';
+
+.list-wrap {
+  .list-content {
+    margin-bottom: 40px;
+
+    > ul {
+      list-style: none;
+      padding: 0;
+
+      > li {
+        margin: 20px 0;
+        padding: 10px;
+        transition: all .5s;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: $grayThin;
+
+          .list-inner {
+            .delete-icon {
+              display: inline-block;
+            }
+          }
+        }
+
+        .list-inner {
+          position: relative;
+          display: flex;
+
+          .text-wrap {
+            width: 100%;
+            padding-left: 20px;
+
+            .title {
+              font-size: $font-size-xl;
+              color: $black;
+            }
+
+            .sub-title {
+              font-size: $font-size-lg;
+              color: $gray;
+            }
+          }
+
+          .btn-group {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+
+            a {
+              font-size: $font-size-base;
+              font-weight: $font-weight-bold;
+              cursor: pointer;
+              text-decoration: none;
+              color: $black;
+            }
+          }
+
+          .delete-icon {
+            display: none;
+            position: absolute;
+            cursor: pointer;
+            right: 0;
+            top: 0;
+            width: 20px;
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $phone) {
+    .list-content {
+      > ul {
+        > li {
+          .list-inner {
+            .text-wrap {
+              width: calc(100% - 80px);
+              padding-left: 10px;
+
+              .title {
+                font-size: $font-size-lg;
+              }
+
+              .sub-title {
+                font-size: $font-size-md;
+              }
+            }
+
+            .btn-group {
+              margin-top: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $phoneLarge) {
+    .list-content {
+      > ul {
+        > li {
+          &:hover {
+            background-color: transparent;
+          }
+          .list-inner {
+            .delete-icon {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

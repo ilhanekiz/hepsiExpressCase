@@ -1,0 +1,44 @@
+<main id="main">
+  <section class="container">
+    <div class="list-wrap container-xs">
+      <a class="submit-link" [routerLink]="['/add']">
+        <div class="box">
+          <div class="inner">
+            <div class="title">+</div>
+          </div>
+        </div>
+        <div class="text">Submit A Link</div>
+      </a>
+      <ng-select [items]="sortingList" bindLabel="name" bindValue="id" [(ngModel)]="selectedSortingId" (change)="handleSortChanged($event)" placeholder="Order by"></ng-select>
+      <div class="list-content">
+        <ul>
+          <li *ngFor="let listItem of list | paginate: { itemsPerPage: 5, currentPage: p }">
+            <div class="list-inner">
+              <div class="box">
+                <div class="inner">
+                  <div class="title">{{listItem.points}}</div>
+                  <span class="sub-title">POINTS</span>
+                </div>
+              </div>
+              <div class="text-wrap">
+                <h1 class="title">{{listItem.title}}</h1>
+                <span class="sub-title">({{listItem.link}})</span>
+                <div class="btn-group">
+                  <a href="javascript:void(0)" (click)="handleUpVote(listItem)">Up Vote</a>
+                  <a href="javascript:void(0)" (click)="handleDownVote(listItem)">Down Vote</a>
+                </div>
+              </div>
+              <a class="delete-icon" (click)='onListItemDelete(listItem.id, listItem.title)'>
+                <img src="../../../assets/images/icon-delete.jpeg">
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="text-center">
+        <p *ngIf="list.length === 0">No links attached.</p>
+        <pagination-controls *ngIf="list.length > 0" (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+  </section>
+</main>
